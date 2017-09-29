@@ -1,0 +1,45 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <div class="spacer" style="width: auto; height: 15px;"></div>
+    <ion-list>
+        
+        <ion-item [navPush]="profilepage">
+            <ion-avatar item-start>
+                <img src="assets/img/Eye.jpg">
+            </ion-avatar>    
+            <h2>{{ auth.user.user_full_name }}</h2>
+            <p>Last login time: {{ auth.user.last_login_time }}</p>
+        </ion-item>
+        <button ion-item [navPush]="changepasswordpage"><ion-icon name="key" item-start></ion-icon>Change Password</button>
+        
+        <button ion-item>
+            <ion-icon name="arrow-round-up" item-start></ion-icon> Last Sync: 2 days ago <ion-icon name="refresh" item-end></ion-icon>
+        </button>
+        <ion-item>
+            <ion-label><ion-icon name="bluetooth" item-start></ion-icon> Bluetooth</ion-label>
+            <ion-toggle checked="false"></ion-toggle>
+        </ion-item>
+        <ion-item>
+            <ion-label><ion-icon name="calendar" item-start></ion-icon> Week starts on</ion-label>
+            <ion-select interface="popover">
+                <ion-option value="Monday" selected>Monday</ion-option>
+            </ion-select>
+        </ion-item>
+        <button ion-item><ion-icon name="information-circle" item-start></ion-icon>About us</button>
+        <button ion-item (click)="logout()" ><ion-icon name="exit" item-start></ion-icon>Logout</button>
+    </ion-list>
+    
+</ion-content>

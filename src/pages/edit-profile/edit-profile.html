@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+    
+        <ion-list>
+            <ion-item>
+                <ion-label>Full Name</ion-label>
+                <ion-input type="text" placeholder="Your Fullname" [(ngModel)]="editProfileData.userFullName" ></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Email Address</ion-label>
+                <ion-input type="text" placeholder="Your Email Address" disabled [(ngModel)]="editProfileData.userEmail"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>DOB</ion-label>
+                <ion-input type="date" placeholder="Date of Birth" [(ngModel)]="editProfileData.userDateOfBirth"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Gender</ion-label>
+                <ion-select [(ngModel)]="editProfileData.userGender">
+                    <ion-option value="Male">Male</ion-option>
+                    <ion-option value="Female">Female</ion-option>
+                </ion-select>
+            </ion-item>
+
+        </ion-list>
+        <button ion-button full (click)="updateProfile()">Update</button>
+    
+</ion-content>
