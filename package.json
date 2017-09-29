@@ -42,7 +42,7 @@
         "ionic": "3.12.0",
         "typescript": "2.3.4"
     },
-    "description": "An Ionic project",
+    "description": "Smart App By Betalogics",
     "cordova": {
         "plugins": {
             "cordova-plugin-network-information": {},
