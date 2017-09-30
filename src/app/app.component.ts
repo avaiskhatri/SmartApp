@@ -17,7 +17,11 @@ export class MyApp {
   rootPage: any=LoginPage;
   loader: any;
 
-  constructor(public auth: AuthProvider, public loadingCtrl: LoadingController) {
+  constructor(platform: Platform, private splashScreen: SplashScreen, public auth: AuthProvider, public loadingCtrl: LoadingController) {
+    platform.ready().then(() => {
+      this.splashScreen.hide();
+    });
+
     this.presentLoading();
     this.auth.checkAuthentication().then((isLoggedIn) =>{
       if(isLoggedIn){
@@ -36,4 +40,5 @@ export class MyApp {
     });
     this.loader.present();
   }
+  
 }
